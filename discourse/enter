@@ -36,13 +36,13 @@ function configure_from_env {
     sed -i "s/database: discourse_prod/database: discourse/" config/database.yml
     sed -i "s/# username: discourse_prod/username: discourse/" config/database.yml
     sed -i "s/# password: itisagooddaytovi/password: chicken/" config/database.yml
-    sed -i "s/# host: dbhost/host: 146.185.181.92\n  port: $POSTGRES_PORT/" config/database.yml
+    sed -i "s/# host: dbhost/host: 146.185.181.92\n  port: 5432" config/database.yml
 
 # test db
     sed -i "s/database: discourse_prod/database: discourse_test/" config/database.yml
     sed -i "s/# username: discourse_test/username: discourse/" config/database.yml
     sed -i "s/# password: 123123123123/password: chicken/" config/database.yml
-    sed -i "s/host: localhost/host: 146.185.181.92\n  port: $POSTGRES_PORT/" config/database.yml
+    sed -i "s/host: localhost/host: 146.185.181.92\n  port: 5432" config/database.yml
 
 # set site domain
     sed -i "s/production.localhost/$DISCOURSE_HOST/" config/database.yml
